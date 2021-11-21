@@ -1,6 +1,7 @@
 html {
   font-family: sans-serif;
   --border-width: 0.5rem;
+  --primary-color: rgb(71, 68, 68);
 }
 
 body {
@@ -38,10 +39,26 @@ ul {
 }
 
 .card {
+  position: relative;
   flex: 1 1 100%;
   border: solid var(--border-width) #0004;
   border-radius: var(--border-radius);
   background-color: var(--color);
   color: var(--label-color);
   font-size: 1em;
+
+  &.face-down::after {
+    content: '?';
+    position: absolute;
+    inset: 0;
+    margin: calc(-1 * var(--border-width));
+    border-radius: inherit;
+    background-color: var(--primary-color);
+    color: lightgray;
+    font-size: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
+

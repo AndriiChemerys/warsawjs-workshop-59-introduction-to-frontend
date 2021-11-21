@@ -18,6 +18,8 @@ function run() {
   selectedColors.forEach(({ color, labelColor }) => {    
     const card = new Card({ color, labelColor, template: cardTemplate });    
     board.addCard(card);                
+    const card2 = new Card({ color, labelColor, template: cardTemplate });    
+    board.addCard(card2);                
   });                                   
                                         
   document.body.prepend(board.element);           
